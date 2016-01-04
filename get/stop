@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+cat data.json | jq '.stops | map(select(.name | contains("'"$1"'"))) | map(select('\
+'.destinations // [] | any(contains( { "line" : "'"$2"'" , "destcode" : "'"$3"'" } ) )))'

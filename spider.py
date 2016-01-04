@@ -272,6 +272,12 @@ for line in itineraries :
 
         itineraries[line][iti] = [ stop[ID] for stop in itineraries[line][iti]]
 
+log( "MISSING DESTINATIONS:")
+
+missing = [ stop for stop in stops.values() if DESTINATIONS not in stop]
+log( '{}/{}'.format( len( missing ) , len( stops ) ) )
+
+list(map(log,missing))
 
 data = { "lines" : lines , "modes" : modes , "itineraries" : itineraries ,
         "stops" : stops , "waiting" : waiting }
