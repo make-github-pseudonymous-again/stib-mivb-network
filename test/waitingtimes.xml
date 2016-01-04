@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<waitingtimes><stopname>VANDERVELDE</stopname><position><latitude>50.847</latitude><longitude>4.447</longitude></position><waitingtime><line>1</line><mode>M</mode><minutes>6</minutes><destination>GARE DE L'OUEST</destination><message/></waitingtime><waitingtime><line>1</line><mode>M</mode><minutes>16</minutes><destination>GARE DE L'OUEST</destination><message/></waitingtime></waitingtimes>
