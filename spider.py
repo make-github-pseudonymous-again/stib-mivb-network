@@ -167,13 +167,15 @@ allclosestops = map( fromfile , closestpaths )
 
 def creeper ( ) :
 
-    notmissing = [ ( i , stop[LATITUDE], stop[LONGITUDE] ) for i , stop in enumerate( stops.values() ) if stop[LATITUDE] is not None and
+    notmissing = [ ( stop[LATITUDE], stop[LONGITUDE] ) for stop in stops.values() if stop[LATITUDE] is not None and
         stop[LONGITUDE] is not None and not has( 'closest' , stop[LATITUDE] ,
             stop[LONGITUDE])]
 
-    for i , latitude , longitude in notmissing :
+    j = 1
+    for latitude , longitude in notmissing :
 
-        log( "{:.2f}%".format( i / len( notmissing ) * 100 ) )
+        log( "{:.2f}%".format( j / len( notmissing ) * 100 ) )
+        j += 1
 
         yield get( 'closest' , latitude , longitude )
 
