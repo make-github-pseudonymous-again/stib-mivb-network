@@ -5,6 +5,10 @@ from math import log10 , ceil , floor
 
 from xml.etree import ElementTree
 
+import arrow
+
+TZ = 'Europe/Brussels'
+
 DEBUG = False
 
 URLS = {
@@ -283,6 +287,10 @@ list(map(log,missing))
 
 data = { "lines" : lines , "modes" : modes , "itineraries" : itineraries ,
         "stops" : stops , "waiting" : waiting }
+
+date = arrow.now(TZ).format('YYYY-MM-DDTHH:mm:ssZZ')
+
+data['creation'] = date
 
 json.dump( data , sys.stdout )
 
